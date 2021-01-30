@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/tools">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/noInternetConnection">
+            <PropertySet app:visibilityMode="ignore" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/windDirection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@id/currentWind"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:visibilityMode="ignore">
+            <PropertySet
+                android:visibility="gone"
+                app:visibilityMode="ignore" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/currentWind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/toolbar_image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:visibilityMode="ignore">
+            <PropertySet
+                android:visibility="gone"
+                app:visibilityMode="ignore" />
+        </Constraint>
+        <Constraint
+            android:id="@id/toolbar_image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@android:color/transparent" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/loadingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibilityMode="ignore">
+            <PropertySet
+                android:visibility="gone"
+                app:visibilityMode="ignore" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/currentTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/toolbar_image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/toolbar_image"
+            app:layout_constraintVertical_bias="0.4">
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customDimension="28sp" />
+        </Constraint>
+        <Constraint
+            android:id="@id/myLocation"
+            app:layout_constraintBottom_toBottomOf="@id/placeName"
+            app:layout_constraintLeft_toRightOf="@id/placeName"
+            app:layout_constraintTop_toTopOf="@id/placeName"
+            app:visibilityMode="ignore">
+            <PropertySet app:visibilityMode="ignore" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/noInternetConnection">
+            <PropertySet app:visibilityMode="ignore" />
+        </Constraint>
+        <Constraint
+            android:id="@id/toolbar_image"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/toolbar" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/selectPlaceView"
+            android:visibility="invisible" />
+        <Constraint
+            android:id="@+id/placeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/currentTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/placeName"
+            app:layout_constraintLeft_toRightOf="@id/placeName"
+            app:layout_constraintTop_toTopOf="@id/placeName">
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customDimension="8sp" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/myLocation"
+            android:visibility="invisible" />
+        <Constraint
+            android:id="@+id/windDirection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/placeName"
+            app:layout_constraintRight_toLeftOf="@id/currentWind"
+            app:layout_constraintTop_toTopOf="@id/placeName" />
+        <Constraint
+            android:id="@id/currentWind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            app:layout_constraintBottom_toBottomOf="@id/placeName"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/placeName" />
+        <Constraint
+            android:id="@+id/phenomenon"
+            android:visibility="invisible" />
+    </ConstraintSet>
+    <Transition
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@+id/start">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@+id/scrollableView" />
+    </Transition>
+
+</MotionScene>

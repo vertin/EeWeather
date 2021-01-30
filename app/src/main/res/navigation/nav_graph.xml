@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/overviewFragment">
+
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="com.vertin.eetweather.ui.main.overview.OverviewFragment"
+        android:label="OverviewFragment" >
+        <action
+            android:id="@+id/action_overviewFragment_to_selectPlaceFragment"
+            app:destination="@id/selectPlaceFragment" />
+        <action
+            android:id="@+id/action_overviewFragment_to_placeForecastFragment"
+            app:destination="@id/placeForecastFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectPlaceFragment"
+        android:name="com.vertin.eetweather.ui.main.place.SelectPlaceFragment"
+        android:label="SelectPlaceFragment" />
+    <fragment
+        android:id="@+id/placeForecastFragment"
+        android:name="com.vertin.eetweather.ui.main.forecast.PlaceForecastFragment"
+        android:label="PlaceForecastFragment" />
+</navigation>

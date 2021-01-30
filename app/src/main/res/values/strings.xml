@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">EetWeather</string>
+    <string name="google_maps_key">AIzaSyBRnHUQqjqPgisG5-FmlrVjMcbkHl3KbdY</string>
+    <string name="forecast">Details</string>
+    <string name="prompt_wind_speed">%s m/s</string>
+    <string name="temperature">%s˚c</string>
+    <string name="temperature_day">Day:  %s˚c</string>
+    <string name="temperature_night">Night:  %s˚c</string>
+    <string name="temperature_format">%d˚c / %d˚c</string>
+    <string name="title_select_location">Select location</string>
+    <string name="hint_search_a_place">Search a location</string>
+    <string name="error_no_location_found">No Location Found</string>
+    <string name="bad_internet_connection">Bad Internet Connection</string>
+    <string name="btn_retry">Retry</string>
+</resources>
