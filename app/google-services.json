@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "50798465105",
+    "project_id": "estonia-weather",
+    "storage_bucket": "estonia-weather.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50798465105:android:c5ad70e8a46f5fd826e870",
+        "android_client_info": {
+          "package_name": "com.vertin.eetweather"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50798465105-e9v5b9fq4p3apdb95lnmlba0l4glb907.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFNUONr0_jHEvy4cWl__nZXeV7jCyMbr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50798465105-e9v5b9fq4p3apdb95lnmlba0l4glb907.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
