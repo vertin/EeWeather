@@ -12,18 +12,18 @@ jobs:
     executor: main-executor
     steps:
       - checkout
-      - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
-      - save_cache:
+      - persist_to_workspace:
+          root: .
           paths:
-            - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+            - .
   test:
     executor: main-executor
     steps:
+      - attach_workspace:
+         at: .
       - run:
          name: Run Tests
          command: ./gradlew lint test
