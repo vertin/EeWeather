@@ -37,5 +37,7 @@ workflows:
   main_flow:
     jobs:
       - build
-      - test
+      - test:
+         requires:
+           - build
 
