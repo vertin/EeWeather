@@ -85,7 +85,6 @@ workflows:
       - release-build:
           requires:
             - unit-test
-            - android-test-all
           filters:
             branches:
               only: master # Commits to master branch
