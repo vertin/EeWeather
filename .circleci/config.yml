@@ -9,11 +9,36 @@ jobs:
     steps:
       - checkout
       - run:
-         name: ls
-         command: ls ~/
-
+         name: Download Dependencies
+         command: ./gradlew androidDependencies
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - "project"
+  lint:
+    executor: android/android-machine
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+         name: lint
+         command: ./gradlew lint
+  unit_tests:
+    executor: android/android-machine
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+         name: unit tests
+         command: ./gradlew test
 
 workflows:
   test-and-build:
     jobs:
       - checkout
+      - lint:
+         requires:
+           - checkout
+      - unit_tests:
+         requires:
+           - checkout
