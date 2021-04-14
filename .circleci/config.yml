@@ -8,9 +8,6 @@ jobs:
     executor: android/android-machine
     steps:
       - checkout
-      - run:
-         name: Download Dependencies
-         command: ./gradlew androidDependencies
       - persist_to_workspace:
           root: ~/
           paths:
@@ -23,11 +20,15 @@ jobs:
       - run:
          name: lint
          command: ./gradlew lint
+      - store_test_results:
+         path: app/build/reports/lint-results.xml
   unit_tests:
     executor: android/android-machine
     steps:
       - attach_workspace:
           at: ~/
+      - android/run-tests:
+         test-command: ./gradlew testDebug
       - run:
          name: unit tests
          command: ./gradlew test
