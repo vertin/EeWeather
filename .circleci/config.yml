@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
          name: ls
-         command: ls /
+         command: ls /tmp
 
 
 workflows:
