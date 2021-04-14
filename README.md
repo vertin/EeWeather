@@ -4,3 +4,5 @@ CircleCI: [![CircleCI](https://circleci.com/gh/vertin/EeWeather.svg?style=svg)](
 
 A weather app only for Estonian region.
 Kotlin, RxJava3, Jetpack, Navigation, Room
+
+Play room for CI integration
